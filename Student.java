@@ -3,8 +3,6 @@ public class Student {
     private String name;
     private double marks;
 
-    
-
     public Student(int rollNumber, String name, double marks) {
         this.rollNumber = rollNumber;
         this.name = name;
@@ -26,7 +24,4 @@ public class Student {
         }
         this.marks = marks;
     }
-
-    
-    
 }
