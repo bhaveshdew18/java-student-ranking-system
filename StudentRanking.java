@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class StudentRanking {
@@ -44,6 +45,7 @@ public class StudentRanking {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> students  = new ArrayList<>();
         createSampleStudents(students);
+        Collections.sort(students);
         displayStudents(students);
         scanner.close();
     }

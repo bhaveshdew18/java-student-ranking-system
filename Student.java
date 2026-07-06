@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable<Student> {
     private int rollNumber;
     private String name;
     private double marks;
@@ -23,5 +23,10 @@ public class Student {
             throw new IllegalArgumentException("Marks must be between 0 to 100");
         }
         this.marks = marks;
+    }
+
+    @Override
+    public int compareTo(Student other) {
+        return Double.compare(other.getMarks(), this.getMarks());
     }
 }
