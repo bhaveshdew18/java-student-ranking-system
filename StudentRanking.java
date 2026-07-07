@@ -72,7 +72,7 @@ public class StudentRanking {
             System.out.println("Marks updated successfully.");
             }
             catch (InputMismatchException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Invalid input, please enter a number.");
                 scanner.next();
             }
         } else {
@@ -161,14 +161,21 @@ public class StudentRanking {
         }
     }
     public static void main(String[] args) {
-        int choice;
+        int choice = 0;
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> students  = new ArrayList<>();
         createSampleStudents(students);
         do {
             printMenu();
+            try {
             choice = scanner.nextInt();
-            performOperation(0, students, scanner);
+            performOperation(choice, students, scanner);
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid input, please enter a number.");
+                scanner.next();
+                continue;
+            }
         } while (choice != 9);
         scanner.close();
     }
